@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../services/usuario.service';
 import { Usuario } from '../Models/Usuario.model';
 
@@ -7,7 +7,7 @@ import { Usuario } from '../Models/Usuario.model';
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
-export class Tab1Page {
+export class Tab1Page implements OnInit {
 
   listaUsuarios: Usuario[]=[];
   usuario?: Usuario;
@@ -41,5 +41,9 @@ export class Tab1Page {
       this.listaUsuarios = [];
     })
   }
+
+ngOnInit(): void {
+  this.buscarUsuarios();
+}
 
 }
