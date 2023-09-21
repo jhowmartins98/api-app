@@ -6,21 +6,25 @@
 
 <ion-content [fullscreen]="true">
   <ion-item>
-    <ion-input label="Nome:" labelPlacement="floating" placeholder="Digite o nome completo"></ion-input>
+    <ion-input [(ngModel)]="usuario.nome"
+    label="Nome:" labelPlacement="floating" placeholder="Digite o nome completo"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-input label="E-mail:" type="email" labelPlacement="floating" placeholder="Digite um e-mail válido"></ion-input>
+    <ion-input [(ngModel)]="usuario.email"
+    label="E-mail:" type="email" labelPlacement="floating" placeholder="Digite um e-mail válido"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-input label="Senha:" type="password" labelPlacement="floating" placeholder="Digite a senha"></ion-input>
+    <ion-input [(ngModel)]="usuario.senha"
+    label="Senha:" type="password" labelPlacement="floating" placeholder="Digite a senha"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-input label="Confirme a senha:" labelPlacement="floating" placeholder="Repita a senha"></ion-input>
+    <ion-input [(ngModel)]="confirmaSenha"
+    label="Confirme a senha:" labelPlacement="floating" placeholder="Repita a senha"></ion-input>
   </ion-item>
 
-  <ion-button expand="full" color="success">SALVAR</ion-button>
-  <ion-button expand="full" fill="clear" color="dark">VOLTAR</ion-button>
+  <ion-button (click)="salvarUsuario()" expand="full" color="success">SALVAR</ion-button>
+  <ion-button routerLink="/" expand="full" fill="clear" color="dark">VOLTAR</ion-button>
 </ion-content>

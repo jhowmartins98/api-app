@@ -48,4 +48,12 @@ export class UsuarioService {
     alert("A operação não pode ser concluida");
     return EMPTY;
   }
+
+  salvar(usuario: Usuario): Observable<Usuario>{
+    return this.http.post<Usuario>(this.url, usuario).pipe(
+      map(retorno => retorno),
+      catchError(erro => this.exibirErro(erro))
+    );
+    
+  }
 }
